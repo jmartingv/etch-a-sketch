@@ -5,16 +5,23 @@ body {
 h1 {
   text-align: center;
 }
+
+.btn-container {
+  text-align: center;
+  margin: 10px auto;
+}
+
 .grid-container {
   margin: 10px auto;
   display: grid;
   border: 3px solid black;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
-  height: 500px;
-  width: 500px;
+  aspect-ratio: 1;
+  height: 600px;
+  width: auto;
 }
 
-.grid-container div {
+.square {
   border: 0.1px solid black;
 }
