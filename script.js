@@ -41,6 +41,7 @@ function setSize() {
   return gridSize;
 }
 
+// Default grid size = 16
 createGrid(16);
 
 sizeBtn.addEventListener('click', () => {
@@ -51,5 +52,3 @@ sizeBtn.addEventListener('click', () => {
 clearBtn.addEventListener('click', () => {
   clearGrid();
 });
-
-console.log(container);
