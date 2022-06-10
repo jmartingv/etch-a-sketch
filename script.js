@@ -1,7 +1,8 @@
 const container = document.querySelector('.grid-container');
 const topContainer = document.querySelector('.btn-container');
+const botContainer = document.querySelector('.bot-container');
 
-// Create buttons and add to container
+// Create top buttons and add to container
 const sizeBtn = document.createElement('button');
 const clearBtn = document.createElement('button');
 
@@ -10,6 +11,19 @@ clearBtn.innerHTML = 'Clear grid';
 
 topContainer.appendChild(sizeBtn);
 topContainer.appendChild(clearBtn);
+
+// Create bot buttons and add to container
+const blackBtn = document.createElement('button');
+const redBtn = document.createElement('button');
+const rainbowBtn = document.createElement('button');
+
+blackBtn.innerHTML = 'Black';
+redBtn.innerHTML = 'Red';
+rainbowBtn.innerHTML = 'Rainbow';
+
+botContainer.appendChild(blackBtn);
+botContainer.appendChild(redBtn);
+botContainer.appendChild(rainbowBtn);
 
 // Function for creating the grid
 function createGrid(size) {

@@ -9,6 +9,17 @@ h1 {
 .btn-container {
   text-align: center;
   margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.bot-container {
+  text-align: center;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 .grid-container {
