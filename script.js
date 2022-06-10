@@ -2,6 +2,8 @@ const container = document.querySelector('.grid-container');
 const topContainer = document.querySelector('.btn-container');
 const botContainer = document.querySelector('.bot-container');
 
+let mode = 'black';
+
 // Create top buttons and add to container
 const sizeBtn = document.createElement('button');
 const clearBtn = document.createElement('button');
@@ -21,6 +23,21 @@ blackBtn.innerHTML = 'Black';
 redBtn.innerHTML = 'Red';
 rainbowBtn.innerHTML = 'Rainbow';
 
+blackBtn.addEventListener('click', () => {
+  clearGrid();
+  mode = 'black';
+});
+
+redBtn.addEventListener('click', () => {
+  clearGrid();
+  mode = 'red';
+});
+
+rainbowBtn.addEventListener('click', () => {
+  clearGrid();
+  mode = 'rainbow';
+});
+
 botContainer.appendChild(blackBtn);
 botContainer.appendChild(redBtn);
 botContainer.appendChild(rainbowBtn);
@@ -34,7 +51,7 @@ function createGrid(size) {
       square.classList.add('square');
 
       square.addEventListener('mouseover', (e) => {
-        e.target.style.backgroundColor = 'red';
+        changeColor(mode, e);
       });
 
       container.style.gridTemplateRows = `repeat(${size},1fr)`;
@@ -62,6 +79,30 @@ function setSize() {
   }
 
   return gridSize;
+}
+
+// Changing tile color
+function changeColor(mode, e) {
+  switch (mode) {
+    case 'black':
+      e.target.style.backgroundColor = 'black';
+      break;
+    case 'red':
+      e.target.style.backgroundColor = 'red';
+      break;
+    case 'rainbow':
+      e.target.style.backgroundColor = getRandomColor();
+      break;
+  }
+}
+
+// Random color generator
+function getRandomColor() {
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+
+  return `rgb(${r},${g},${b})`;
 }
 
 // Default grid size = 16
