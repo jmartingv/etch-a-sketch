@@ -1,6 +1,15 @@
 const container = document.querySelector('.grid-container');
-const sizeBtn = document.querySelector('#size');
-const clearBtn = document.querySelector('#clear');
+const topContainer = document.querySelector('.btn-container');
+
+// Create buttons and add to container
+const sizeBtn = document.createElement('button');
+const clearBtn = document.createElement('button');
+
+sizeBtn.innerHTML = 'Set grid size';
+clearBtn.innerHTML = 'Clear grid';
+
+topContainer.appendChild(sizeBtn);
+topContainer.appendChild(clearBtn);
 
 // Function for creating the grid
 function createGrid(size) {
